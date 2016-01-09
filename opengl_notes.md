@@ -104,7 +104,7 @@ GLint logLength;
 glGetShaderiv(shaderId, GL_COMPILE_STATUS, &status);
 glGetShaderiv(shaderId, GL_INFO_LOG_LENGTH, &logLength);
 if (status != GL_TRUE) {
-  std::vector<char> log(logLength + 1);
+  std::vector<char> log(logLength);
   // Store compilation log.
   glGetShaderInfoLog(shaderId, logLength, NULL, &log[0]);
 }
@@ -128,7 +128,7 @@ GLint logLength;
 glGetShaderiv(shaderId, GL_COMPILE_STATUS, &status);
 glGetShaderiv(shaderId, GL_INFO_LOG_LENGTH, &logLength);
 if (status != GL_TRUE) {
-  std::vector<char> log(logLength + 1);
+  std::vector<char> log(logLength);
   glGetShaderInfoLog(shaderId, logLength, NULL, &log[0]);
   std::cerr << "Error processing shader " << filename << ": " << std::endl;
   for (const auto& c: log)
@@ -196,6 +196,24 @@ ___
 
 ##### `glUseProgram(GLuint program)`
 - Sets the given *program* as the program to be used for rendering.
+
+___
+
+### Checking Link Status
+```
+GLint isLinked;
+GLint logLength;
+glGetProgramiv(shaderProgram, GL_LINK_STATUS, &isLinked);
+glGetProgramiv(shaderProgram, GL_INFO_LOG_LENGTH, &logLength);
+if (isLinked == GL_FALSE) {
+  vector<char> log(logLength);
+  glGetProgramInfoLog(shaderProgram, logLength, NULL, &log[0]);
+  std::cerr << "Error linking: " << std::endl;
+  for (const auto& c : log) 
+  	std::cerr << buffer
+  std::cerr << std::endl;
+}
+```
 
 ` `
 * * *
