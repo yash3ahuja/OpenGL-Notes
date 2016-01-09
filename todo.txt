@@ -1,0 +1,4 @@
+1. Seperate file into seperate files for each thing.
+2. Complete currently non-filled in sections.
+3. Update Table of Contents.
+

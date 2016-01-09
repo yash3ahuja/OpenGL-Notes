@@ -1,5 +1,3 @@
-// TODO: Update table of contents, complete all sections
-
 #Table of Contents
 1. [Vertex Array Objects](#vao)
   - [Useful Functions](#vao1)
