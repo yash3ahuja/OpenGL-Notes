@@ -1,4 +1,3 @@
-1. Seperate file into seperate files for each thing.
-2. Complete currently non-filled in sections.
-3. Update Table of Contents.
-
+1. Complete Shaders.md (including updating table of contents).
+2. Work on Textures.md.
+3. Complete rest of files.
